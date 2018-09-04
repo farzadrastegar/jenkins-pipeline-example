@@ -5,33 +5,33 @@ throttle(['throttleDocker']) {
         stage('Setup') {
           checkout scm
           sh '''
-            echo "======1======Setup passed!"
+            echo "Setup passed!"
           '''
         }
         stage('Test'){
           parallel (
             "unit": {
               sh '''
-                echo "======2=======Test unit passed!"
+                echo "Unit test passed!"
               '''
             },
             "functional": {
               sh '''
-                echo "======3========Test functional passed!"
+                echo "Functional test passed!"
               '''
             }
           )
         }
         stage('Capacity Test') {
           sh '''
-            echo "=============4========Capacity test passed!"
+            echo "Capacity test passed!"
           '''
         }
       }
       finally {
         stage('Cleanup') {
           sh '''
-            echo "===========END============All done!"
+            echo "All done!"
           '''
         }
       }
