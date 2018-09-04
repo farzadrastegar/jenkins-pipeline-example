@@ -31,6 +31,7 @@ throttle(['throttleDocker']) {
       finally {
         stage('Cleanup') {
           sh '''
+            echo "Cleaning up..."
             echo "All done!"
           '''
         }
